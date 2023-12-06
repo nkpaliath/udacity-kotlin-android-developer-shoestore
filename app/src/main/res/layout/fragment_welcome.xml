@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--This layout uses LinearLayout as it is a simple list of four items arranged vertically-->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="welcomeScreen"
+            type="com.github.nkpaliath.shoestore.screens.welcome.WelcomeFragment" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/layout_normal">
+
+        <TextView
+            android:id="@+id/textWelcome"
+            style="@style/HeadingText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@{@string/text_welcome(@string/app_name)}" />
+
+        <TextView
+            android:id="@+id/textAccountCreated"
+            style="@style/AllText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/layout_normal"
+            android:gravity="center_horizontal"
+            android:text="@string/text_account_created" />
+
+        <TextView
+            android:id="@+id/textClickToProceed"
+            style="@style/AllText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/layout_normal"
+            android:gravity="center_horizontal"
+            android:text="@string/click_to_proceed" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnInstructions"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/btn_instructions"
+            android:onClickListener="@{() -> welcomeScreen.onClickInstructions()}"/>
+    </LinearLayout>
+</layout>

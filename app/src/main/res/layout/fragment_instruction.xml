@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--This layout uses LinearLayout as it is a simple list of three items arranged vertically-->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="instructionScreen"
+            type="com.github.nkpaliath.shoestore.screens.instruction.InstructionFragment" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/layout_normal">
+
+        <TextView
+            android:id="@+id/textInstructionsHeading"
+            style="@style/HeadingText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/text_instructions_heading" />
+
+        <TextView
+            android:id="@+id/textInstructions"
+            style="@style/AllText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/layout_normal"
+            android:text="@string/text_instructions"
+            android:textAlignment="textStart" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnInventory"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/btn_inventory"
+            android:onClickListener="@{() -> instructionScreen.onClickInventory()}"/>
+    </LinearLayout>
+</layout>

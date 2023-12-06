@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Shoe Store</string>
+    <string name="text_email_label">Email</string>
+    <string name="edit_email_hint">Enter email address</string>
+    <string name="text_password_label">Password</string>
+    <string name="btn_login">Login</string>
+    <string name="text_new_user">New user?</string>
+    <string name="btn_sign_up">Sign up</string>
+    <string name="text_welcome">Welcome to %s!</string>
+    <string name="text_account_created">A new account has been created for you!</string>
+    <string name="click_to_proceed">Click on the instructions button below to proceed.</string>
+    <string name="btn_instructions">Instructions</string>
+    <string name="text_instructions_heading">Instructions</string>
+    <string name="text_welcome_heading">Welcome</string>
+    <string name="text_shoe_details_heading">Shoe Details</string>
+    <string name="text_instructions">
+        1. Click on the \"Inventory\" to view a list of shoes currently available in the store.\n\n
+        2. In the inventory screen, you can add new items by clicking the add button.\n\n
+        3. On clicking of the add button, it will open a new screen where details of the new shoe can be added.\n\n
+        4. Once added, the new shoe item will be available in the inventory screen.
+    </string>
+<!--    <string-array name="text_instructions">-->
+<!--        <item>1. Click on the \"Inventory\" to view a list of shoes currently available in the store.</item>-->
+<!--        <item>2. In the inventory screen, you can add new items by clicking the add button.</item>-->
+<!--        <item>3. On clicking of the add button, it will open a new screen where details of the new shoe can be added.</item>-->
+<!--        <item>4. Once added, the new shoe item will be available in the inventory screen.</item>-->
+<!--    </string-array>-->
+    <string name="btn_inventory">Inventory</string>
+    <string name="fab_add_shoe">Add shoe</string>
+    <string name="text_shoes_inventory">Shoes Inventory</string>
+    <string name="text_shoe_name">Shoe name:</string>
+    <string name="text_company_name">Company name:</string>
+    <string name="text_shoe_size">Shoe size:</string>
+    <string name="text_shoe_description">Description:</string>
+    <string name="list_of_shoes_available">List of shoes available</string>
+    <string name="btn_save">Save</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="text_enter_shoe_name">Enter shoe name</string>
+    <string name="text_enter_company_name">Enter company name</string>
+    <string name="text_enter_shoe_size">Enter shoe size</string>
+    <string name="text_enter_shoe_description">Enter shoe description</string>
+    <string name="text_no_shoes_in_list">Click on + to add shoes to inventory</string>
+    <string name="menu_item_logout">Logout</string>
+</resources>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?><!--This layout uses ConstraintLayout so as to arrange
+the items in the same line.-->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="detailScreen"
+            type="com.github.nkpaliath.shoestore.screens.detail.DetailFragment" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/layout_very_small">
+
+        <TextView
+            android:id="@+id/textShoeName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:labelFor="@id/editShoeName"
+            android:text="@string/text_shoe_name"
+            android:textAppearance="@style/LabelText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editShoeNameLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintStart_toStartOf="@+id/textShoeName"
+            app:layout_constraintTop_toBottomOf="@+id/textShoeName">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editShoeName"
+                style="@style/AllText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/layout_small"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <TextView
+            android:id="@+id/textCompanyName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:labelFor="@id/editCompanyName"
+            android:text="@string/text_company_name"
+            android:textAppearance="@style/LabelText"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editCompanyNameLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/textCompanyName">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editCompanyName"
+                style="@style/AllText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/layout_small"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textShoeSize"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:labelFor="@id/editShoeSize"
+            android:text="@string/text_shoe_size"
+            android:textAppearance="@style/LabelText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editShoeNameLayout" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editShoeSizeLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textShoeSize">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editShoeSize"
+                style="@style/AllText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/layout_small"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textShoeDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:labelFor="@id/editShoeDescription"
+            android:text="@string/text_shoe_description"
+            android:textAppearance="@style/LabelText"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/editCompanyNameLayout" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@id/editShoeDescriptionLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/textShoeDescription">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editShoeDescription"
+                style="@style/AllText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/layout_small"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSave"
+            style="@style/Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:onClickListener="@{() -> detailScreen.onSave()}"
+            android:text="@string/btn_save"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editShoeSizeLayout" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCancel"
+            style="@style/Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:backgroundTint="?attr/colorError"
+            android:onClickListener="@{() -> detailScreen.onCancel()}"
+            android:text="@string/btn_cancel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/editShoeDescriptionLayout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
