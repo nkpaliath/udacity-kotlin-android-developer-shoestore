@@ -8,7 +8,6 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.MenuProvider
-import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -28,7 +27,7 @@ class ListingFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_listing, container, false)
+        binding = FragmentListingBinding.inflate(inflater, container, false)
         val menuHost = requireActivity()
 
         menuHost.addMenuProvider(object : MenuProvider {
@@ -55,14 +54,15 @@ class ListingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val shoes = viewModel.shoeList.value ?: listOf()
 
-        if (shoes.isEmpty()) {
-            binding.textNoShoesInList.visibility = View.VISIBLE
-        } else {
-            binding.textNoShoesInList.visibility = View.GONE
-            for (item in shoes) {
-                binding.listShoes.addView(createShoeItem(item))
+        viewModel.shoeList.observe(viewLifecycleOwner) {shoes ->
+            if (shoes.isEmpty()) {
+                binding.textNoShoesInList.visibility = View.VISIBLE
+            } else {
+                binding.textNoShoesInList.visibility = View.GONE
+                for (item in shoes) {
+                    binding.listShoes.addView(createShoeItem(item))
+                }
             }
         }
 
@@ -75,15 +75,8 @@ class ListingFragment : Fragment() {
     }
 
     private fun createShoeItem(newShoe: Shoe): View {
-        val shoeBinding: ShoeDetailsBinding =
-            DataBindingUtil.inflate(layoutInflater, R.layout.shoe_details, null, false)
+        val shoeBinding = ShoeDetailsBinding.inflate(layoutInflater, null, false)
         shoeBinding.shoeDetails = newShoe
-//        shoeBinding.apply {
-//            textShoeName.text = newShoe.shoeName
-//            textCompanyName.text = newShoe.companyName
-//            textShoeSize.text = newShoe.shoeSize.toString()
-//            textShoeDescription.text = newShoe.description
-//        }
         return shoeBinding.root
     }
 }

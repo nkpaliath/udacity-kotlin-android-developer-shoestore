@@ -5,7 +5,9 @@ the items in the same line.-->
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <variable
+            name="detailViewModel"
+            type="com.github.nkpaliath.shoestore.models.ShoeStoreViewModel" />
         <variable
             name="detailScreen"
             type="com.github.nkpaliath.shoestore.screens.detail.DetailFragment" />
@@ -19,7 +21,7 @@ the items in the same line.-->
 
         <TextView
             android:id="@+id/textShoeName"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/layout_zero"
             android:layout_height="wrap_content"
             android:labelFor="@id/editShoeName"
             android:text="@string/text_shoe_name"
@@ -29,9 +31,9 @@ the items in the same line.-->
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/editShoeNameLayout"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/layout_zero"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="4dp"
+            android:layout_marginEnd="@dimen/layout_very_small"
             app:layout_constraintEnd_toStartOf="@+id/guideline3"
             app:layout_constraintStart_toStartOf="@+id/textShoeName"
             app:layout_constraintTop_toBottomOf="@+id/textShoeName">
@@ -42,7 +44,8 @@ the items in the same line.-->
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="@dimen/layout_small"
-                android:inputType="text" />
+                android:inputType="text"
+                android:text="@={detailViewModel.shoeName}"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.constraintlayout.widget.Guideline
@@ -56,7 +59,7 @@ the items in the same line.-->
             android:id="@+id/textCompanyName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
+            android:layout_marginStart="@dimen/layout_very_small"
             android:labelFor="@id/editCompanyName"
             android:text="@string/text_company_name"
             android:textAppearance="@style/LabelText"
@@ -65,9 +68,9 @@ the items in the same line.-->
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/editCompanyNameLayout"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/layout_zero"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
+            android:layout_marginStart="@dimen/layout_very_small"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.493"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
@@ -79,12 +82,13 @@ the items in the same line.-->
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="@dimen/layout_small"
-                android:inputType="text" />
+                android:inputType="text"
+                android:text="@={detailViewModel.companyName}"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:id="@+id/textShoeSize"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/layout_zero"
             android:layout_height="wrap_content"
             android:labelFor="@id/editShoeSize"
             android:text="@string/text_shoe_size"
@@ -94,9 +98,9 @@ the items in the same line.-->
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/editShoeSizeLayout"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/layout_zero"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="4dp"
+            android:layout_marginEnd="@dimen/layout_very_small"
             app:layout_constraintEnd_toStartOf="@+id/guideline3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textShoeSize">
@@ -107,14 +111,15 @@ the items in the same line.-->
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="@dimen/layout_small"
-                android:inputType="number" />
+                android:inputType="number"
+                android:text="@={detailViewModel.shoeSize}"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:id="@+id/textShoeDescription"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/layout_zero"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
+            android:layout_marginStart="@dimen/layout_very_small"
             android:labelFor="@id/editShoeDescription"
             android:text="@string/text_shoe_description"
             android:textAppearance="@style/LabelText"
@@ -123,9 +128,9 @@ the items in the same line.-->
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@id/editShoeDescriptionLayout"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/layout_zero"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
+            android:layout_marginStart="@dimen/layout_very_small"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
             app:layout_constraintTop_toBottomOf="@+id/textShoeDescription">
@@ -136,15 +141,16 @@ the items in the same line.-->
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="@dimen/layout_small"
-                android:inputType="text" />
+                android:inputType="text"
+                android:text="@={detailViewModel.shoeDescription}"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnSave"
             style="@style/Button"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/layout_zero"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="4dp"
+            android:layout_marginEnd="@dimen/layout_very_small"
             android:onClickListener="@{() -> detailScreen.onSave()}"
             android:text="@string/btn_save"
             app:layout_constraintEnd_toStartOf="@+id/guideline3"
@@ -154,9 +160,9 @@ the items in the same line.-->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnCancel"
             style="@style/Button"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/layout_zero"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
+            android:layout_marginStart="@dimen/layout_very_small"
             android:backgroundTint="?attr/colorError"
             android:onClickListener="@{() -> detailScreen.onCancel()}"
             android:text="@string/btn_cancel"
